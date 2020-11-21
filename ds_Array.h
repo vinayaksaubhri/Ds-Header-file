@@ -36,7 +36,7 @@ namespace ds{
                  push_back(i);
              }
          }
-            void push_back(T element){ // push the element in the back of array.
+         void push_back(T element){ // push the element in the back of array.
 
              // if the current_size  is equal to or more than total_size , this means we don't have space to accommodate more elements. So we need to double the size.
              if((current_size+1) >= total_size){
@@ -45,6 +45,24 @@ namespace ds{
              }
              arr[current_size]=element;
              ++current_size;
+         }
+         void pop_back(){
+             //pop the last element of the array.
+             if(current_size > 0){
+                 --current_size;
+             }
+             if(current_size < total_size/4){ //reducing the size of the array to save the space.
+                 resize(total_size/4);
+                 total_size /= 2;
+             }
+         }
+         void resize(int new_size){ // function to resize the array .
+           T * new_arr = new T[2*new_size]; //doubling the size.
+           for(int i=0;i<current_size;++i){
+               new_arr[i]=arr[i];//copy the old array.
+           }
+             delete[] arr;//deleting the old array.
+           arr = new_arr;
          }
     };
 }
