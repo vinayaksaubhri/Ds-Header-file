@@ -73,7 +73,18 @@ namespace ds{
          int capacity(){//return the totla_size of the array.
              return total_size;
          }
-         
+         void print(){
+             for(int i=0;i<current_size;++i){
+                 std::cout<<arr[i]<<" ";
+             }
+         }
+         void input(int start , int end){
+            for(int i=start;i<end;++i){
+                T temp;
+                std::cin>>temp;
+                push_back(temp);
+            }
+         }
     };
 }
 
