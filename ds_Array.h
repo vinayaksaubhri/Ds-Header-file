@@ -36,6 +36,16 @@ namespace ds{
                  push_back(i);
              }
          }
+            void push_back(T element){ // push the element in the back of array.
+
+             // if the current_size  is equal to or more than total_size , this means we don't have space to accommodate more elements. So we need to double the size.
+             if((current_size+1) >= total_size){
+                 resize(2*total_size);
+                 total_size *= 2;
+             }
+             arr[current_size]=element;
+             ++current_size;
+         }
     };
 }
 
