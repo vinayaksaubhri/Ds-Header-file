@@ -73,17 +73,27 @@ namespace ds{
          int capacity(){//return the totla_size of the array.
              return total_size;
          }
-         void print(){
+         void print(){ //print the array.
              for(int i=0;i<current_size;++i){
                  std::cout<<arr[i]<<" ";
              }
          }
-         void input(int start , int end){
+         void input(int start , int end){//take the input .
             for(int i=start;i<end;++i){
                 T temp;
                 std::cin>>temp;
                 push_back(temp);
             }
+         }
+         void erase(int position){//erase the element form given position.
+           int right_position=position;
+           if(position<0){
+               right_position=current_size-position
+           }
+           for(int i=right_position;i<current_size;++i){
+               arr[i]=arr[i+1];
+           }
+           --current_size;
          }
     };
 }
