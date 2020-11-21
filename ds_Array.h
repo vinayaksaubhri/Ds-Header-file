@@ -95,6 +95,9 @@ namespace ds{
            }
            --current_size;
          }
+         void sort_array(){ // sort the vector
+             sort(arr,arr+current_size);
+         }
     };
 }
 
