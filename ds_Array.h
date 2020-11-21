@@ -64,6 +64,16 @@ namespace ds{
              delete[] arr;//deleting the old array.
            arr = new_arr;
          }
+         int size(){ //return the current_size of the array.
+             return current_size;
+         }
+         T& back(){ // return the last element of the array.
+             return arr[current_size-1];
+         }
+         int capacity(){//return the totla_size of the array.
+             return total_size;
+         }
+         
     };
 }
 
