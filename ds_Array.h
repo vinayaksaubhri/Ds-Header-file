@@ -108,7 +108,7 @@ namespace ds{
                 push_back(v[i]);
             }
         }
-        void insert(int value ,int position){
+        void insert(int value ,int position){//insert an element to the given position
             ++current_size;
             for(int i=current_size-1;i>=position;--i){
                 arr[i]=arr[i-1];
