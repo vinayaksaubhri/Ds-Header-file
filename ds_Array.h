@@ -98,6 +98,16 @@ namespace ds{
          void sort_array(){ // sort the vector
              sort(arr,arr+current_size);
          }
+         void append(std::vector<T> v){ // append the std vector to the array
+            for(auto i : v){
+                push_back(i);
+            }
+         }
+         void append(Array<T> v){
+             for(int i=0;i<v.size();++i){// append the Array to the Array
+                 push_back(v[i]);
+             }
+         }
     };
 }
 
