@@ -7,7 +7,7 @@
 namespace ds{
     template<typename T>
     class Array{
-
+    private:
         //arr is a pointer which store the address of the array.
         T* arr;
         //current_size store the number of element store in our array.
@@ -127,12 +127,16 @@ namespace ds{
         T at(int position){ //return the value at the position
             return arr[position-1];
         }
-        Array operator + (Array<T> v){ // + operator used to append to array
+        Array operator + (Array<T> v){ // + operator used to append an array to an array
           Array<T> temp = Array<T>(*this);
           temp.append(v);
             return temp;
         }
-        
+        Array operator + (std::vector<T> v){ // + operator used to append a vector to an array
+            Array<T> temp = Array<T>(*this);
+            temp.append(v);
+            return temp;
+        }
     };
 }
 
