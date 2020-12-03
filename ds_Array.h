@@ -137,6 +137,14 @@ namespace ds{
             temp.append(v);
             return temp;
         }
+        T * search(T value){//it search the array for the value and return the add. of the first occurences of it.
+            for(int i=0;i<current_size;++i){
+                if(arr[i] == value){
+                    return arr+i;
+                }
+            }
+           return arr+current_size;
+        }
     };
 }
 
