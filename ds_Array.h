@@ -115,18 +115,24 @@ namespace ds{
             }
             arr[position-1] = value;
         }
-     T  begin(){ // return the value at the start of array
+        T  begin(){ // return the value at the start of array
             return *arr;
         }
-     T  end(){ // return the value at the end of array
+        T  end(){ // return the value at the end of array
            return *(arr+current_size-1);
         }
-      bool empty(){ // to check whether the array is empty or not
+        bool empty(){ // to check whether the array is empty or not
           return current_size;
         }
-       T at(int position){ //return the value at the position
+        T at(int position){ //return the value at the position
             return arr[position-1];
         }
+        Array operator + (Array<T> v){ // + operator used to append to array
+          Array<T> temp = Array<T>(*this);
+          temp.append(v);
+            return temp;
+        }
+        
     };
 }
 
