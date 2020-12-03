@@ -155,7 +155,24 @@ namespace ds{
             }
            return count;
         }
-  
+       int min(){ // return the min element of the array.
+            int min= INT_MAX;
+            for(int i=0;i<current_size;++i){
+                if(arr[i]<min){
+                    min=arr[i];
+                }
+            }
+           return min;
+        }
+      int max(){// return the max element of the array.
+            int max = INT_MIN;
+          for(int i=0;i<current_size;++i){
+              if(arr[i]>max){
+                  max=arr[i];
+              }
+          }
+          return max;
+        }
     };
 }
 
