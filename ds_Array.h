@@ -2,6 +2,7 @@
 #include <vector>
 #include <algorithm>
 #include <cstring>
+#include <climits>
 #ifndef DS_HEADER_FILE_DS_ARRAY_H
 #define DS_HEADER_FILE_DS_ARRAY_H
 namespace ds{
@@ -145,6 +146,16 @@ namespace ds{
             }
            return arr+current_size;
         }
+       int count(T value){// return the count of the value present in array.
+            int count;
+            for(int i=0; i<current_size;++i){
+                if(arr[i]==value){
+                    ++count;
+                }
+            }
+           return count;
+        }
+  
     };
 }
 
